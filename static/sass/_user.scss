@@ -1,0 +1,201 @@
+@import "./mixins";
+@import "./variables";
+
+.user {
+  flex: 0.75;
+  padding: 0 1rem;
+  height: fit-content;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background: $light-color;
+
+    @include web {
+      padding: 2rem;
+    }
+
+    .user-head {
+      margin-top: 1rem;
+      text-transform: capitalize;
+      @include flexCenter(row, space-between);
+
+      .back {
+        cursor: pointer;
+        font-size: 0.789rem;
+        text-transform: uppercase;
+      }
+      .heading {
+        font-size: 1.345rem;
+        font-weight: normal;
+        color: $primary-accent-color;
+      }
+
+      .create-btn {
+        padding: 0.4rem 1rem;
+        color: $primary-color;
+        text-transform: uppercase;
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  &-container {
+    gap: 5rem;
+    display: grid;
+    margin: 3rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+
+    @include web {
+      gap: 2rem;
+    }
+
+    .showcase {
+      width: 100%;
+      padding: 1rem;
+      box-shadow: $neg-shadow;
+
+      .top {
+        padding: 0 1rem;
+        text-transform: capitalize;
+        @include flexCenter(row, space-between);
+
+        img {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 5rem;
+        }
+
+        .title {
+          @include flexCenter(column, flex-end);
+          align-items: flex-end;
+
+          .username {
+            font-size: 1.234rem;
+          }
+          .role {
+            font-size: 0.89rem;
+            color: $accent-color;
+          }
+        }
+      }
+
+      .bottom {
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 1rem;
+        text-transform: capitalize;
+        background-color: $light-grey;
+
+        .title {
+          padding: 1rem;
+          color: $dark-grey;
+          text-decoration: underline;
+        }
+
+        .info {
+          margin: 1rem 0;
+          @include flexCenter(row, none);
+
+          .icon {
+            margin-right: 1rem;
+            font-size: 1.1234rem;
+          }
+
+          .details {
+            text-transform: initial;
+
+            &.upper {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+    .update {
+      width: 100%;
+      padding: 1rem;
+      box-shadow: $neg-shadow;
+
+      .title {
+        font-size: 1.345rem;
+        color: $accent-color;
+        text-transform: uppercase;
+      }
+
+      .myform {
+        margin: 1rem 0;
+
+        .left {
+          @include flexCenter(column, none);
+          align-items: initial;
+
+          .item {
+            text-transform: capitalize;
+
+            label {
+              margin: 1rem;
+              font-size: 0.95rem;
+            }
+
+            input {
+              width: 90%;
+              height: 2rem;
+              color: #111;
+              border-radius: 1rem;
+              padding: 0.456rem 0.789rem;
+              font-family: $secondary-font;
+              margin: 0.234rem 0 1rem 0.5rem;
+              border-bottom: 1px solid $dark-grey;
+
+              &:hover,
+              &:focus {
+                background: $primary-color;
+              }
+            }
+          }
+
+          .update-btn {
+            width: 25%;
+            margin: 1.5rem;
+            font-size: 1rem;
+            align-self: center;
+            font-weight: normal;
+            box-shadow: $shadow;
+            color: $light-color;
+            border-radius: 5rem;
+            text-transform: capitalize;
+            background: $secondary-accent-color;
+          }
+        }
+
+        .upload {
+          margin: 1rem;
+          padding: 0 1rem;
+          @include flexCenter(row, center);
+
+          label {
+            cursor: pointer;
+            padding: 0.456rem;
+            border-radius: 5rem;
+            background: $light-grey;
+          }
+
+          .image {
+            width: 15rem;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: $shadow;
+            border-radius: 0.1rem;
+          }
+
+          #file {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

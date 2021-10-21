@@ -1,0 +1,51 @@
+@import "./mixins";
+@import "./variables";
+
+.nav-bar {
+  top: 1rem;
+  margin: 1rem;
+  z-index: 1000;
+  position: sticky;
+  border-radius: 5rem;
+  background: #e4e4e4;
+  padding: 1rem 0 1rem 2rem;
+  @include flexCenter(row, space-between);
+
+  .left {
+    .logo {
+      font-size: 1.5rem;
+      color: $accent-color;
+      text-transform: uppercase;
+      font-family: $secondary-font;
+    }
+  }
+
+  .right {
+    width: 20vw;
+    @include flexCenter(row, space-evenly);
+
+    .icon-group {
+      position: relative;
+
+      .icon {
+        cursor: pointer;
+        font-size: 1.23rem;
+        color: $secondary-color;
+
+        @include web {
+          font-size: 1.5rem;
+        }
+      }
+
+      span {
+        width: 50%;
+        top: -0.234rem;
+        right: -0.5rem;
+        font-weight: 560;
+        font-size: 0.7rem;
+        position: absolute;
+        color: $primary-accent-color;
+      }
+    }
+  }
+}

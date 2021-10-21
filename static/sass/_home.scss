@@ -1,0 +1,256 @@
+@import "./mixins";
+@import "./variables";
+
+.home {
+  flex: 0.75;
+  height: fit-content;
+
+  //   @include web {
+  //     padding: 1.5rem 0 1.4rem 0;
+  //   }
+
+  &__wrapper {
+    width: 90%;
+    height: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    background: $light-color;
+
+    @include web {
+      width: 95%;
+    }
+  }
+}
+
+// Featured item
+
+.featured {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+  &__item {
+    padding: 1rem;
+    box-shadow: $shadow;
+    background: transparent;
+    text-transform: capitalize;
+    backdrop-filter: blur(400px);
+    border: 0.1px solid transparent;
+    @include flexCenter(column, space-evenly);
+
+    .title {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .last {
+      color: $dark-grey;
+      font-size: 0.789rem;
+
+      @include web {
+        font-size: 1rem;
+      }
+    }
+
+    .revenue {
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+      @include flexCenter(row, space-evenly);
+    }
+
+    .rev {
+      color: $primary-accent-color;
+    }
+
+    .rate {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        fill: red;
+
+        &.pos {
+          fill: $secondary-accent-color;
+        }
+      }
+    }
+  }
+}
+
+// chart
+.chart {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+
+  .heading {
+    font-weight: normal;
+    margin: 1rem 0 2rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-family: $secondary-font;
+    color: $secondary-accent-color;
+  }
+
+  .graph {
+    width: 100%;
+    height: 10px;
+  }
+}
+
+.widgets {
+  gap: 2rem;
+  margin: 3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+  .newUserWidget,
+  .transWidget {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
+    height: fit-content;
+    box-shadow: $neg-shadow;
+    background: $light-color;
+    text-transform: capitalize;
+
+    @include web {
+      font-size: 1rem;
+      min-height: 35.1rem;
+    }
+
+    .heading {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin: 1rem 0 2rem;
+      text-transform: capitalize;
+      text-decoration: underline;
+      font-family: $secondary-font;
+      color: $secondary-accent-color;
+    }
+
+    .user-info {
+      width: 100%;
+      padding: 0.5rem 3rem 0.5rem 1rem;
+      @include flexCenter(row, none);
+
+      .user-icon {
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 5rem;
+      }
+
+      .user-details {
+        margin: 1rem 0 1rem 1rem;
+        @include flexCenter(column, none);
+        align-items: flex-start;
+
+        .role {
+          color: $primary-accent-color;
+        }
+      }
+      .icon {
+        cursor: pointer;
+        margin-left: auto;
+        font-size: 1.345rem;
+
+        &:hover {
+          transform: scale(1.0345);
+        }
+      }
+    }
+  }
+
+  .trans {
+    width: 100%;
+    border-spacing: 1.4rem;
+
+    &-tr {
+      td {
+        width: fit-content;
+        @include flexCenter(row, center);
+      }
+
+      padding: 1rem 0;
+      margin: 0.5rem 0;
+      border-bottom: 1px solid $dark-grey;
+      @include flexCenter(row, space-between);
+
+      &:last-of-type {
+        border: none;
+      }
+
+      &.head {
+        border: none;
+        font-size: 1.123rem;
+        border-radius: 1rem;
+        padding: 1rem 0.6rem;
+        text-decoration: underline;
+        font-family: $secondary-font;
+      }
+
+      .trans-headers {
+        color: $accent-color;
+        font-weight: lighter;
+      }
+
+      .trans-profile {
+        @include flexCenter(row, space-between);
+
+        // .trans-uname {
+        //   font-size: 0.9rem;
+        // }
+
+        .user-profile {
+          width: 1.5rem;
+          height: 1.5rem;
+          object-fit: cover;
+          border-radius: 5rem;
+          margin-right: 0.345rem;
+
+          @include web {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+      .trans-date {
+        color: $dark-grey;
+
+        sup {
+          color: $dark-grey;
+          text-transform: lowercase;
+        }
+      }
+      .trans-status {
+        margin-left: 1rem;
+
+        .trans-btn {
+          min-width: 5.5rem;
+          color: $secondary-color;
+          text-transform: uppercase;
+          background: $primary-accent-color;
+
+          &.approved {
+            color: $secondary-accent-color;
+            background: $secondary-accent-color-alpha;
+          }
+
+          &.declined {
+            color: rgb(189, 0, 0);
+            background: rgba(189, 0, 0, 0.205);
+          }
+
+          &.pending {
+            color: $primary-accent-color;
+            background: $primary-accent-color-alpha;
+          }
+        }
+      }
+    }
+  }
+}

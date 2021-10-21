@@ -1,0 +1,62 @@
+@import "./mixins";
+@import "./variables";
+
+.products {
+  flex: 0.75;
+  height: 90vh;
+  padding: 0 1rem;
+
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    background: $light-color;
+
+    @include web {
+      width: 95%;
+    }
+
+    .heading {
+      font-size: 1.345rem;
+      font-weight: normal;
+      margin: 2rem 0.5rem;
+      text-transform: uppercase;
+      color: $primary-accent-color;
+    }
+  }
+}
+
+.products-name {
+  width: 100%;
+  @include flexCenter(row, none);
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.products-actions {
+  width: 100%;
+  margin: 0;
+  @include flexCenter(row, space-between);
+
+  .icons {
+    cursor: pointer;
+    font-size: 1.234rem;
+    stroke: $accent-color;
+
+    &.del {
+      fill: $dark-grey;
+    }
+
+    &:hover {
+      transform: scale(1.0123);
+    }
+  }
+}

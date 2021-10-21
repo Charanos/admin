@@ -1,0 +1,23 @@
+$light-color: #fff;
+$dark-color: #0b0b0b;
+
+$light-grey: #f4f4f4;
+$dark-grey: #999;
+
+$primary-color: #e4e4e4;
+$secondary-color: #2a2a2a;
+
+$primary-font: "Nunito", sans-serif;
+$secondary-font: "Montserrat", sans-serif;
+
+$accent-color: rgb(12, 113, 180);
+$primary-accent-color: rgb(219, 13, 219);
+$secondary-accent-color: rgb(9, 219, 132);
+
+$accent-color-alpha: rgba(12, 113, 180, 0.2);
+$primary-accent-color-alpha: rgba(219, 13, 219, 0.2);
+$secondary-accent-color-alpha: rgba(9, 219, 132, 0.2);
+
+$shadow: 0.3rem 0.3rem 0.3rem rgba(128, 128, 128, 0.226);
+$neg-shadow: 0.3rem 0.3rem 0.3rem rgba(128, 128, 128, 0.226),
+  -0.13rem -0.13rem 0.5rem $light-grey;

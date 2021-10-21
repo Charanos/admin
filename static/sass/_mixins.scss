@@ -1,0 +1,12 @@
+@mixin web {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin flexCenter($direction, $justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
